@@ -66,6 +66,6 @@ public class Expense {
 
     @Override
     public String toString() {
-        return String.format("%s - $%.2f - %s", date, amount, category);
+        return String.format("%s - ₹%.2f - %s", date, amount, category);
     }
 }

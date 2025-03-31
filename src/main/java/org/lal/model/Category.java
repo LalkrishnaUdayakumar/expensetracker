@@ -54,4 +54,21 @@ public class Category {
         }
         return Color.GRAY; // Default color if category not found
     }
+    public static void addCategory(String name, Color color) {
+        DEFAULT_CATEGORIES.add(new Category(name, color));
+    }
+    public static void editCategory(String oldName, String newName, Color newColor) {
+        for (Category category : DEFAULT_CATEGORIES) {
+            if (category.getName().equals(oldName)) {
+                category.name = newName;
+                category.color = newColor;
+                break;
+            }
+        }
+    }
+
+    public static void deleteCategory(String name) {
+        DEFAULT_CATEGORIES.removeIf(category -> category.getName().equals(name));
+    }
 }
+

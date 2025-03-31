@@ -55,7 +55,7 @@ public class ExpenseListPanel extends JPanel {
         for (Expense expense : expenses) {
             tableModel.addRow(new Object[]{
                     expense.getDate().format(DATE_FORMATTER),
-                    String.format("$%.2f", expense.getAmount()),
+                    String.format("₹%.2f", expense.getAmount()),
                     expense.getCategory(),
                     expense.getDescription(),
                     expense.getId()
@@ -81,4 +81,5 @@ public class ExpenseListPanel extends JPanel {
             JOptionPane.showMessageDialog(this, "Please select an expense to delete", "No Selection", JOptionPane.INFORMATION_MESSAGE);
         }
     }
+
 }
