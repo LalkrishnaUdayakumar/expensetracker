@@ -43,6 +43,27 @@ public class AddExpensePanel extends JPanel {
         categoryComboBox = new JComboBox<>(categories.toArray(new String[0]));
         add(categoryComboBox, gbc);
 
+        // Add category button
+        gbc.gridx = 2;
+        gbc.gridy = 1;
+        JButton addCategoryButton = new JButton("Add");
+        addCategoryButton.addActionListener(this::addCategory);
+        add(addCategoryButton, gbc);
+
+        // Edit category button
+        gbc.gridx = 3;
+        gbc.gridy = 1;
+        JButton editCategoryButton = new JButton("Edit");
+        editCategoryButton.addActionListener(this::editCategory);
+        add(editCategoryButton, gbc);
+
+        // Delete category button
+        gbc.gridx = 4;
+        gbc.gridy = 1;
+        JButton deleteCategoryButton = new JButton("Delete");
+        deleteCategoryButton.addActionListener(this::deleteCategory);
+        add(deleteCategoryButton, gbc);
+
         // Date
         gbc.gridx = 0;
         gbc.gridy = 2;
@@ -70,27 +91,6 @@ public class AddExpensePanel extends JPanel {
         JButton addButton = new JButton("Add Expense");
         addButton.addActionListener(this::addExpense);
         add(addButton, gbc);
-
-        // Add category button
-        gbc.gridx = 1;
-        gbc.gridy = 5;
-        JButton addCategoryButton = new JButton("Add Category");
-        addCategoryButton.addActionListener(this::addCategory);
-        add(addCategoryButton, gbc);
-
-        // Edit category button
-        gbc.gridx = 1;
-        gbc.gridy = 6;
-        JButton editCategoryButton = new JButton("Edit Category");
-        editCategoryButton.addActionListener(this::editCategory);
-        add(editCategoryButton, gbc);
-
-        // Delete category button
-        gbc.gridx = 1;
-        gbc.gridy = 7;
-        JButton deleteCategoryButton = new JButton("Delete Category");
-        deleteCategoryButton.addActionListener(this::deleteCategory);
-        add(deleteCategoryButton, gbc);
     }
 
     private void addExpense(ActionEvent e) {

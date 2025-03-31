@@ -39,7 +39,7 @@ public class SummaryPanel extends JPanel {
         statsPanel.removeAll();
         
         double totalExpenses = expenseManager.getTotalExpenses();
-        JLabel totalLabel = new JLabel(String.format("Total Expenses: $%.2f", totalExpenses));
+        JLabel totalLabel = new JLabel(String.format("Total Expenses: ₹%.2f", totalExpenses));
         totalLabel.setFont(new Font("Arial", Font.BOLD, 16));
         totalLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         statsPanel.add(totalLabel);
@@ -49,7 +49,7 @@ public class SummaryPanel extends JPanel {
         YearMonth currentMonth = YearMonth.now();
         double monthlyTotal = expenseManager.getTotalForMonth(currentMonth);
         JLabel monthlyLabel = new JLabel(
-            String.format("Current Month (%s) Expenses: $%.2f", 
+            String.format("Current Month (%s) Expenses: ₹%.2f",
             currentMonth.format(DateTimeFormatter.ofPattern("MMMM yyyy")), 
             monthlyTotal)
         );
@@ -114,7 +114,7 @@ public class SummaryPanel extends JPanel {
                     g2d.drawString(category, x, height - 15);
                     
                     // Draw value
-                    g2d.drawString(String.format("$%.2f", value), x, height - 30);
+                    g2d.drawString(String.format("₹%.2f", value), x, height - 30);
                     
                     x += barWidth + spacing;
                 }
